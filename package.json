@@ -4,7 +4,8 @@
   "description": "Additions to chai-spies, adding utilities to inspect args and check if a spy was called with a partial object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "babel --presets es2015 -d lib/ src/",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
