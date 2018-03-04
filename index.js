@@ -1,1 +1,1 @@
-module.exports = require('./lib/called-with-object-containing');
+module.exports = require('./lib');

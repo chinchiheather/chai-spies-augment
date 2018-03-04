@@ -13,9 +13,16 @@
   },
   "keywords": [
     "chai-spies",
-    "chai"
+    "chai",
+    "testing",
+    "automated-testing",
+    "unit-testing",
+    "spies"
   ],
-  "author": "Heather Roberts <heather.roberts427@gmail.com>",
+  "author": {
+    "name": "Heather Roberts",
+    "email": "heather.roberts427@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chinchiheather/chai-spies-augment/issues"
