@@ -22,4 +22,10 @@ export default function () {
 
     return spy;
   };
+
+  // Add all the property functions back on to chai.spy object
+  // Code above will have removed things like chai.spy.on etc.
+  for (const key in originalSpy) {
+    chai.spy[key] = originalSpy[key];
+  }
 }
