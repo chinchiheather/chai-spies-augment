@@ -2,7 +2,7 @@
 Additions to the [chai-spies](https://github.com/chaijs/chai-spies) library
 
 Adds:
- * Ability to easily inspect a the parameters a spy has been called with
+ * Ability to easily inspect the parameters a spy has been called with
  * Ability to check if a spy was called with a partial object
 
 ## Install
