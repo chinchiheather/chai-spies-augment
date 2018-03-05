@@ -1,6 +1,20 @@
 import { Assertion } from 'chai';
 import _ from 'lodash';
 
+/**
+ * Adds option to check if a spy was called with a partial object
+ * This will check if any paramater, in any of the spy's calls, is an object containing the passed in value
+ *
+ * @example
+ * const spy = chai.spy();
+ *
+ * spy({ a: 'b', c: 'd' });
+ * spy(1, 'a', { b: 'c' });
+ *
+ * expect(spy).to.have.been.called.with.objectContaining({ a: 'b' }); // true
+ * expect(spy).to.have.been.called.with.objectContaining({ b: 'c' }); // true
+ *
+ */
 export default function () {
   Assertion.addMethod('objectContaining', objectContaining);
 

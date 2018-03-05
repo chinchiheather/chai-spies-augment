@@ -20,15 +20,24 @@ chai.use(chaiSpiesAugment);
 ```
 
 ## Usage
+### Accessing spy call parameters
 ```js
 const spy = chai.spy();
-...
-const args = spy.args(); // gets the arguments from the most recent call to the spy
-const argsFor = spy.argsFor(2); // gets the arguments from a particular call to the spy
+ 
+spy(1, 2, 3);
+spy('a', 'b', 'c');
+ 
+const args = spy.args(); // ['a', 'b', 'c']
+const argsFor = spy.argsFor(0); // [1, 2, 3] 
 ```
+### Checking for partial object
 
 ```js
 const spy = chai.spy();
-...
-expect(spy).to.have.been.called.with.objectContaining({ a: 'b' });
+ 
+spy({ a: 'b', c: 'd' });
+spy(1, 'a', { b: 'c' });
+ 
+expect(spy).to.have.been.called.with.objectContaining({ a: 'b' }); // true
+expect(spy).to.have.been.called.with.objectContaining({ b: 'c' }); // true
 ```
