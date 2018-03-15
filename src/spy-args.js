@@ -30,7 +30,7 @@ export default function () {
      * @param callIdx {number}
      */
     spy.argsFor = function (callIdx) {
-      return this.__spy.calls[callIdx][0];
+      return this.__spy.calls[callIdx];
     };
 
     return spy;
