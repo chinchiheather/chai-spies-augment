@@ -23,7 +23,9 @@ export default function () {
 
     const spy = this._obj.__spy;
     const calls = spy.calls;
-
+    if (calls.length === 0) {
+      throw Error('ERROR::objectContaining: Spy has not been called');
+    }
 
     const callsContainObject = calls.some(
       args => args.some(

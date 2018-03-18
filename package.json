@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
-    "test": "mocha --require babel-core/register --reporter spec \"./src/**/*.spec.js\"",
+    "test": "mocha --require babel-core/register --reporter spec \"test/test-setup.js\" \"./src/**/*.spec.js\"",
     "test:watch": "npm test -- --watch"
   },
   "repository": {

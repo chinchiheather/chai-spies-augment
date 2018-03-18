@@ -1,8 +1,5 @@
 import chai, { expect } from 'chai';
-import chaiSpies from 'chai-spies';
 import spyArgs from './spy-args';
-
-chai.use(chaiSpies);
 
 describe('Spy Args', () => {
   let originalSpy;
@@ -51,16 +48,16 @@ describe('Spy Args', () => {
   });
 
   describe('argsFor', () => {
-    it('returns arguments for specified call index', () => {
+    it('returns arguments array for specified call index', () => {
       spy('a');
       spy(1, 2, 3);
       spy(['b', 'c', 'd']);
       expect(spy.argsFor(0)).to.eql(['a'],
-        'should return argument array for index 0');
+        'should return argument array for call index 0');
       expect(spy.argsFor(1)).to.eql([1, 2, 3],
-        'should return argument array for index 1');
+        'should return argument array for call index 1');
       expect(spy.argsFor(2)).to.eql([['b', 'c', 'd']],
-        'should return argument array for index 2');
+        'should return argument array for call index 2');
     });
 
     it('throws useful error if passed an invalid call index', () => {
