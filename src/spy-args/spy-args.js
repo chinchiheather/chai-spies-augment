@@ -22,7 +22,12 @@ export default function () {
      * Returns array of arguments from spy's most recent call
      */
     spy.args = function () {
-      return this.argsFor(this.__spy.calls.length - 1);
+      const calls = this.__spy.calls;
+      if (calls.length > 0) {
+        return this.argsFor(calls.length - 1);
+      } else {
+        throw new Error('ERROR::spy.args: Spy has not been called');
+      }
     };
 
     /**
@@ -30,7 +35,12 @@ export default function () {
      * @param callIdx {number}
      */
     spy.argsFor = function (callIdx) {
-      return this.__spy.calls[callIdx];
+      const calls = this.__spy.calls;
+      if (calls[callIdx]) {
+        return calls[callIdx];
+      } else {
+        throw new Error('ERROR::spy.argsFor: Invalid call index for spy');
+      }
     };
 
     return spy;
